@@ -1,11 +1,13 @@
 <?php get_header(); ?>
     <div class="clearfix"></div>
 <?php
+
+// Einbinden des Meta-Slider Plugins
+// TODO: Herausfinden, wie alle WP-Mulisites den selben Slider nutzen können
 echo do_shortcode("[metaslider id=32]");
 ?>
     <!-- Separator -->
     <div style="background-color:rgb(195,225,247);height:10px;"></div>
-
 
     <!-- Quote -->
     <div class="highlight-clean" style="background-color:rgb(23,27,44);">

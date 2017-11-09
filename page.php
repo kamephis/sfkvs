@@ -8,5 +8,5 @@
 <?php endwhile; else: ?>
 	<p>Tut mir leid, es wurde kein passender Beitrag gefunden.</p>
 <?php endif; ?>
-	</div>
+</div>
 <?php get_footer(); ?>
