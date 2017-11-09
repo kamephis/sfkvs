@@ -7,7 +7,16 @@
  * @since sfkvs_seventeen 1.0
  */
 // Einbinden der Navigationsfunktionalität (Bootstrap Navigation)
-require_once('wp-bootstrap-navwalker.php');
+if (!file_exists(get_template_directory() . '/class-wp-bootstrap-navwalker.php')) {
+    // file does not exist... return an error.
+    return new WP_Error('wp-bootstrap-navwalker-missing', __('It appears the wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker'));
+} else {
+    // file exists... require it.
+    require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+}
+
+require_once(get_template_directory() . '/lang/de_DE.php');
+
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -143,6 +152,36 @@ function sfkvs_seventeen_widgets_init() {
 		'after_title' => '',
 	) );
 
+    register_sidebar(array(
+        'name' => 'Feature Box Links',
+        'id' => 'feature_box_left',
+        'description' => '1. Box',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => '',
+    ));
+
+    register_sidebar(array(
+        'name' => 'Feature Box Mitte',
+        'id' => 'feature_box_center',
+        'description' => '2. Box',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => '',
+    ));
+
+    register_sidebar(array(
+        'name' => 'Feature Box Rechts',
+        'id' => 'feature_box_right',
+        'description' => '3. Box',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => '',
+    ));
+
 
 	/*
 	register_sidebar( array(
@@ -172,25 +211,25 @@ if ( ! function_exists( 'sfkvs_seventeen_fonts_url' ) ) :
 		 * Translators: If there are characters in your language that are not supported
 		 * by Noto Sans, translate this to 'off'. Do not translate into your own language.
 		 */
-		if ( 'off' !== _x( 'on', 'Noto Sans font: on or off', 'twentyfifteen' ) ) {
-			$fonts[] = 'Noto Sans:400italic,700italic,400,700';
-		}
+        /*if ( 'off' !== _x( 'on', 'Noto Sans font: on or off', 'twentyfifteen' ) ) {
+            $fonts[] = 'Noto Sans:400italic,700italic,400,700';
+        }*/
 
 		/*
 		 * Translators: If there are characters in your language that are not supported
 		 * by Noto Serif, translate this to 'off'. Do not translate into your own language.
 		 */
-		if ( 'off' !== _x( 'on', 'Noto Serif font: on or off', 'twentyfifteen' ) ) {
-			$fonts[] = 'Noto Serif:400italic,700italic,400,700';
-		}
+        /*if ( 'off' !== _x( 'on', 'Noto Serif font: on or off', 'twentyfifteen' ) ) {
+            $fonts[] = 'Noto Serif:400italic,700italic,400,700';
+        }*/
 
 		/*
 		 * Translators: If there are characters in your language that are not supported
 		 * by Inconsolata, translate this to 'off'. Do not translate into your own language.
 		 */
-		if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'twentyfifteen' ) ) {
-			$fonts[] = 'Inconsolata:400,700';
-		}
+        /*if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'twentyfifteen' ) ) {
+            $fonts[] = 'Inconsolata:400,700';
+        }*/
 
 		/*
 		 * Translators: To add an additional character subset specific to your language,
@@ -224,37 +263,59 @@ endif;
  *
  * Adds a `js` class to the root `<html>` element when JavaScript is detected.
  */
+
 function sfkvs_seventeen_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
-add_action( 'wp_head', 'sfkvs_seventeen_javascript_detection', 0 );
+
+//add_action( 'wp_head', 'sfkvs_seventeen_javascript_detection', 0 );
 
 /**
  * Enqueue scripts and styles.
  */
 function sfkvs_seventeen_scripts() {
-	// Add custom fonts, used in the main stylesheet.
-	//wp_enqueue_style( 'sfkvs_seventeen-fonts', twentyfifteen_fonts_url(), array(), null );
-
-	// Bootstrap 3 stylesheet
-	wp_register_style( 'bootstrap.min', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css' );
+    // Bootstrap 4 stylesheet
+    wp_register_style('bootstrap.min', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css');
 	wp_enqueue_style( 'bootstrap.min' );
 
 	// Font-Awesome stylesheet
 	wp_register_style( 'font-awesome.min', get_template_directory_uri() . '/assets/fonts/font-awesome.min.css' );
 	wp_enqueue_style( 'font-awesome.min' );
 
+    // Swiper
+    wp_register_style('sfk-swiper', get_template_directory_uri() . '/assets/css/swiper.min.css');
+    wp_enqueue_style('sfk-swiper');
+
+    // Tether
+    wp_register_style('sfk-tether', get_template_directory_uri() . '/assets/css/tether/tether.css');
+    wp_enqueue_style('sfk-tether');
+
 	// myStyle
-	wp_register_style( 'custom_styles', get_template_directory_uri() . '/style.css' );
+    wp_register_style('custom_styles', get_template_directory_uri() . '/assets/css/styles.min.css');
 	wp_enqueue_style( 'custom_styles' );
 
-	// scripts
-	wp_enqueue_script('jquery'); // just for testing, doesn't work without either
+    // custom Style
+    wp_register_style('sfk_style', get_template_directory_uri() . '/style.css');
+    wp_enqueue_style('sfk_style');
+
+    // JavaScripts
+
+    //wp_deregister_script('jquery');
+
+    //wp_register_script('jquery',get_template_directory_uri() .'/assets/js/jquery.min.js','','3.2.1');
+    //wp_enqueue_script('jquery');
+
+    wp_register_script('sfk_tether_js', get_template_directory_uri() . '/assets/js/tether/tether.min.js');
+    wp_enqueue_script('sfk_tether_js');
+
+    wp_register_script('bootstrap.js.min', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array('jquery'));
+    wp_enqueue_script('bootstrap.js.min');
+
+    wp_register_script('sfk_script', get_template_directory_uri() . '/assets/js/script.min.js', array('jquery'));
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js' );
 }
 add_action( 'wp_enqueue_scripts', 'sfkvs_seventeen_scripts' );
 

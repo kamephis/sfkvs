@@ -1,14 +1,25 @@
 <?php get_header(); ?>
-<div class="col-lg-12">
-	<?php if (function_exists('nav_breadcrumb')) nav_breadcrumb(); ?>
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<h3 class="entry-title"><?php the_title(); ?></h3>
-		<?php the_content(); ?> <?php edit_post_link(); ?>
+    <div class="clearfix"></div>
+<?php
+echo do_shortcode("[metaslider id=32]");
+?>
+    <!-- Separator -->
+    <div style="background-color:rgb(195,225,247);height:10px;"></div>
 
-<?php endwhile; else: ?>
-	<p>Tut mir leid, es wurde kein passender Beitrag gefunden.</p>
-<?php endif; ?>
-	</div>
-<?php include("service.php");?>
+
+    <!-- Quote -->
+    <div class="highlight-clean" style="background-color:rgb(23,27,44);">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center"><i class="fa fa-quote-left"></i></h2>
+                <p class="text-center" style="font-size:21px;">
+                    <?php echo SFK_QUOTE; ?>
+                </p>
+            </div>
+            <div class="buttons"></div>
+        </div>
+    </div>
+    <div style="background-color:rgb(195,225,247);height:10px;">
+    </div>
 
 <?php get_footer(); ?>
