@@ -1,5 +1,5 @@
 <nav class="navbar sticky-top navbar-toggleable-md navbar-light" role="navigation"
-     style="display: block; background: #fff; border-bottom:10px solid rgb(23,27,44);">
+     style="display: block; background: #fff; opacity:0.9; border-bottom:10px solid rgb(23,27,44);">
     <div class="container">
 
         <?php
@@ -89,13 +89,15 @@
         color: white !important;
     }
 
-    ul.nav li.dropdown:hover > ul.dropdown-menu {
-        display: block;
-    }
-
-    @media (min-width: 979px) {
+    /*
         ul.nav li.dropdown:hover > ul.dropdown-menu {
             display: block;
         }
-    }
+
+        @media (min-width: 979px) {
+            ul.nav li.dropdown:hover > ul.dropdown-menu {
+                display: block;
+            }
+        }
+        */
 </style>

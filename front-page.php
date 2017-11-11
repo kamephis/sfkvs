@@ -1,14 +1,5 @@
 <?php get_header(); ?>
     <div class="clearfix"></div>
-
-
-<?php
-
-// Einbinden des Meta-Slider Plugins
-// TODO: Herausfinden, wie alle WP-Mulisites den selben Slider nutzen können
-//echo do_shortcode("[metaslider id=32]");
-?>
-
 <?php if (is_active_sidebar('sfk_slider')) : ?>
     <?php dynamic_sidebar('sfk_slider'); ?>
 <?php endif; ?>
