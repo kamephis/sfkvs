@@ -22,10 +22,32 @@
                     <?php endif; ?>
                 </div>
                 <div class="col item social">
-                    <a href="#">
+                    <?php
+
+                    // Eintragen der entsprechenden Social Links, je nach Website ID
+
+                    $fb_link = '';
+                    $twitter_link = '';
+
+                    switch (get_current_blog_id()) {
+                        // VS
+                        case '1':
+                            $fb_link = 'https://www.facebook.com/sfk.vs/';
+                            $twitter_link = 'https://twitter.com/sfk_vs';
+                            break;
+                        // Furtwangen
+                        case '2':
+                            $fb_link = 'https://www.facebook.com/sfk.fuwa/';
+                            $twitter_link = '';
+                            break;
+                    }
+
+
+                    ?>
+                    <a href="<?php echo $fb_link; ?>">
                         <i class="fa fa-facebook-f"></i>
                     </a>
-                    <a href="#">
+                    <a href="<?php echo $twitter_link; ?>">
                         <i class="fa fa-twitter"></i>
                     </a>
                 </div>

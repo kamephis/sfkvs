@@ -203,6 +203,16 @@ function sfkvs_seventeen_widgets_init() {
         'after_title' => '</h4>',
     ));
 
+    register_sidebar(array(
+        'name' => 'Slider Area',
+        'id' => 'sfk_slider',
+        'description' => 'In diesem Bereich kann ein Slider eingebunden werden',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => '',
+    ));
+
 
 	/*
 	register_sidebar( array(

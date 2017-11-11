@@ -15,5 +15,5 @@
 </head>
 <body <?php body_class(); ?>>
 <?php require_once('navbar_top.php'); ?>
-<div id="mainContent" style="min-height:500px;">
+<div id="mainContent" style="min-height:550px;">
 
