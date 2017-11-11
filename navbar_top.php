@@ -41,7 +41,7 @@
                     'container' => 'div',
                     'container_class' => 'navbar navbar-light float-right',
                     'container_id' => 'navcol-2',
-                    'menu_class' => 'nav navbar-nav ml-auto',
+                    'menu_class' => 'nav navbar-nav ml-auto btn-nav',
                     'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
                     'walker' => new WP_Bootstrap_Navwalker())
             );
@@ -50,6 +50,10 @@
     </div>
 </nav>
 <style>
+
+    .btn-nav a.nav-link {
+        color: white !important;
+    }
     #navcol-2 ul li {
 
         padding: 0.25rem 0.5rem;
@@ -57,7 +61,8 @@
         border-radius: 0.2rem;
         color: white !important;
 
-        background: #5cb85c;
+        background: #f0ad4e;
+        /*background: #5cb85c;*/
 
         display: inline-block;
         font-weight: normal;
