@@ -21,8 +21,7 @@
             <span class="sr-only">Navigation einblenden</span>
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div style="margin-left:200px;" class="visible-lg visible-xl"></div>
-        <div class="collapse navbar-collapse" id="navcol-1">
+        <div class="collapse navbar-collapse offset-xl-3" id="navcol-1">
             <?php
             wp_nav_menu(array(
                     'theme_location' => 'primary',
@@ -88,5 +87,15 @@
 
     #navcol-2 ul li:a {
         color: white !important;
+    }
+
+    ul.nav li.dropdown:hover > ul.dropdown-menu {
+        display: block;
+    }
+
+    @media (min-width: 979px) {
+        ul.nav li.dropdown:hover > ul.dropdown-menu {
+            display: block;
+        }
     }
 </style>
