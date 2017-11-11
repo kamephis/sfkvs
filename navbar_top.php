@@ -21,7 +21,7 @@
             <span class="sr-only">Navigation einblenden</span>
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse offset-xl-3" id="navcol-1">
+        <div class="collapse navbar-collapse offset-xl-2" id="navcol-1">
             <?php
             wp_nav_menu(array(
                     'theme_location' => 'primary',
