@@ -68,6 +68,7 @@ if ( ! function_exists( 'sfkvs_seventeen_setup' ) ) :
 		register_nav_menus( array(
 			'primary' => __( 'Primary Menu',      'sfkvs_seventeen' ),
 			'social'  => __( 'Social Links Menu', 'sfkvs_seventeen' ),
+            'top_right' => __('Quickmenu', 'sfkvs_seventeen'),
 		) );
 
 		/*
@@ -180,6 +181,26 @@ function sfkvs_seventeen_widgets_init() {
         'after_widget' => '',
         'before_title' => '',
         'after_title' => '',
+    ));
+
+    register_sidebar(array(
+        'name' => 'Über uns (rechts)',
+        'id' => 'about_right',
+        'description' => 'Sidebar der Über uns Seite',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h4>',
+        'after_title' => '</h4>',
+    ));
+
+    register_sidebar(array(
+        'name' => 'Öffentl. Arbeit (rechts)',
+        'id' => 'pr_right',
+        'description' => 'Sidebar der Öffentlichkeitsarbeits-Seite',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h4>',
+        'after_title' => '</h4>',
     ));
 
 

@@ -11,6 +11,7 @@ Author URI: http://www.boehland.one
 * Eigene Definitionen
  */
 body {
+    /*margin-top:150px;*/
     padding: 0;
     background: #fff;
 }
@@ -19,3 +20,4 @@ body {
     border-bottom: 10px solid;
     border-color: rgb(23, 27, 44);
 }
+

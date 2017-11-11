@@ -14,4 +14,6 @@
     <title><?php wp_title(' - ', true, 'right'); ?> <?php bloginfo('name'); ?></title>
 </head>
 <body <?php body_class(); ?>>
-<?php require_once('navbar_top.php');
+<?php require_once('navbar_top.php'); ?>
+<div id="mainContent" style="min-height:500px;">
+

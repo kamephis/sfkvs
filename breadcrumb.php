@@ -91,7 +91,6 @@ function nav_breadcrumb() {
 		}
 
 		echo '</nav>';
-
 	}
 }
 ?>
