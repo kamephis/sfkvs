@@ -17,10 +17,10 @@
         echo '</a>';
         ?>
 
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Navigation einblenden</span><span
                     class="navbar-toggler-icon"></span></button>
 
-        <div class="collapse navbar-collapse" id="navcol-1" style="margin-left:250px;">
+        <div class="collapse navbar-collapse" id="navcol-1" style="margin-left:200px;">
             <?php
             wp_nav_menu(array(
                     'theme_location' => 'primary',
