@@ -52,9 +52,14 @@
                     </a>
                 </div>
             </div>
-            <p class="copyright">&copy; <?php echo date("Y");
-                echo " ";
-                echo bloginfo('name'); ?></p>
+            <p class="copyright">
+                &copy; <?php echo date("Y") . '&nbsp;' . bloginfo('name'); ?>
+                <br>
+                <br>
+                <a style="color:#fff; margin-right:1em;" href="<?php echo get_home_url(); ?>/impressum">Impressum</a><a
+                        style="color:#fff;" href="<?php echo get_home_url(); ?>/datenschutz">Datenschutz</a>
+            </p>
+
         </div>
     </footer>
 </div>
