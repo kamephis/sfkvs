@@ -17,18 +17,20 @@
         echo '</a>';
         ?>
 
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Navigation einblenden</span><span
-                    class="navbar-toggler-icon"></span></button>
-
-        <div class="collapse navbar-collapse" id="navcol-1" style="margin-left:200px;">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
+            <span class="sr-only">Navigation einblenden</span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div style="margin-left:200px;" class="visible-lg visible-xl"></div>
+        <div class="collapse navbar-collapse" id="navcol-1">
             <?php
             wp_nav_menu(array(
                     'theme_location' => 'primary',
                     'depth' => 2,
                     'container' => 'div',
-                    'container_class' => 'navbar navbar-light float-right',
+                    'container_class' => 'navbar navbar-light',
                     'container_id' => 'navcol-1',
-                    'menu_class' => 'nav navbar-nav ml-auto',
+                    'menu_class' => 'nav navbar-nav',
                     'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
                     'walker' => new WP_Bootstrap_Navwalker())
             );
@@ -39,9 +41,9 @@
                     'theme_location' => 'top_right',
                     'depth' => 2,
                     'container' => 'div',
-                    'container_class' => 'navbar navbar-light float-right',
+                    'container_class' => 'navbar navbar-light',
                     'container_id' => 'navcol-2',
-                    'menu_class' => 'nav navbar-nav ml-auto btn-nav',
+                    'menu_class' => 'nav navbar-nav btn-nav',
                     'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
                     'walker' => new WP_Bootstrap_Navwalker())
             );
