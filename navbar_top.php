@@ -1,5 +1,4 @@
-<nav class="navbar sticky-top navbar-toggleable-md navbar-light" role="navigation"
-     style="display: block; background: #fff; opacity:0.9; border-bottom:10px solid rgb(23,27,44);">
+<nav class="navbar sticky-top navbar-toggleable-md navbar-light" role="navigation" id="navbar-top">
     <div class="container">
 
         <?php
@@ -9,7 +8,7 @@
         echo '<a href="' . get_home_url() . '" title="Zurück zur Startseite">';
 
         if (has_custom_logo()) {
-            echo '<img src="' . esc_url($logo[0]) . '" class="img img-responsive">';
+            echo '<img src="' . esc_url($logo[0]) . '" class="img img-fluid" style="min-width:250px;">';
         } else {
             echo '<h1>' . get_bloginfo('name') . '</h1>';
         }
@@ -50,8 +49,14 @@
         </div>
     </div>
 </nav>
-<style>
 
+<style>
+    #navbar-top {
+        display: block;
+        background: #fff;
+        opacity: 0.9;
+        border-bottom: 10px solid rgb(23, 27, 44);
+    }
     .btn-nav a.nav-link {
         color: white !important;
     }

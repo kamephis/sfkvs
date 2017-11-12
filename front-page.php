@@ -1,10 +1,12 @@
 <?php get_header(); ?>
     <div class="clearfix"></div>
-<?php if (is_active_sidebar('sfk_slider')) : ?>
-    <?php dynamic_sidebar('sfk_slider'); ?>
-<?php endif; ?>
+    <div id="slider-top">
+        <?php if (is_active_sidebar('sfk_slider')) : ?>
+            <?php dynamic_sidebar('sfk_slider'); ?>
+        <?php endif; ?>
+    </div>
     <!-- Separator -->
-    <div style="background-color:rgb(195,225,247);height:10px;"></div>
+    <div id="first-separator" style="background-color:rgb(195,225,247);height:10px;"></div>
 
     <!-- Quote -->
     <div class="highlight-clean" style="background-color:rgb(23,27,44);">

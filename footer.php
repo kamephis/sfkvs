@@ -53,7 +53,8 @@
                 </div>
             </div>
             <p class="copyright">
-                &copy; <?php echo date("Y") . '&nbsp;' . bloginfo('name'); ?>
+                <?php echo '&copy; ' . date("Y"); ?>
+                <?php echo '&nbsp;' . bloginfo('name'); ?>
                 <br>
                 <br>
                 <a style="color:#fff; margin-right:1em;" href="<?php echo get_home_url(); ?>/impressum">Impressum</a><a
