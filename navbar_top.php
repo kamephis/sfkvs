@@ -1,6 +1,5 @@
 <nav class="navbar sticky-top navbar-toggleable-md navbar-light" role="navigation" id="navbar-top">
     <div class="container">
-
         <?php
         $custom_logo_id = get_theme_mod('custom_logo');
         $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
@@ -8,19 +7,21 @@
         echo '<a href="' . get_home_url() . '" title="Zurück zur Startseite">';
 
         if (has_custom_logo()) {
-            echo '<img src="' . esc_url($logo[0]) . '" class="img img-fluid" style="min-width:250px;">';
+            echo '<img src="' . esc_url($logo[0]) . '" class="img img-fluid">';
         } else {
             echo '<h1>' . get_bloginfo('name') . '</h1>';
         }
 
         echo '</a>';
         ?>
-
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1" style="float:right;">
             <span class="sr-only">Navigation einblenden</span>
             <span class="navbar-toggler-icon"></span>
         </button>
+
+        <div class="clearfix visible-xs visible-sm"></div>
         <div class="collapse navbar-collapse offset-xl-2" id="navcol-1">
+
             <?php
             wp_nav_menu(array(
                     'theme_location' => 'primary',
