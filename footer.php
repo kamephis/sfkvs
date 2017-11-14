@@ -41,8 +41,6 @@
                             $twitter_link = '';
                             break;
                     }
-
-
                     ?>
                     <a href="<?php echo $fb_link; ?>">
                         <i class="fa fa-facebook-f"></i>
