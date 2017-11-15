@@ -8,6 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
+ * @author Marlon Böhland
  * @package sfkvs
  * @since sfkvs 0.1
  * @license GPL 2.0
