@@ -17,7 +17,6 @@ if (!file_exists(get_template_directory() . '/class-wp-bootstrap-navwalker.php')
 
 require_once(get_template_directory() . '/lang/de_DE.php');
 
-
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
@@ -55,6 +54,7 @@ if ( ! function_exists( 'sfkvs_seventeen_setup' ) ) :
 		 * provide it for us.
 		 */
 		add_theme_support( 'title-tag' );
+
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
@@ -97,10 +97,11 @@ if ( ! function_exists( 'sfkvs_seventeen_setup' ) ) :
 			'flex-height' => true,
 		) );
 
-		/*
-		 * This theme styles the visual editor to resemble the theme style,
-		 * specifically font, colors, icons, and column width.
-		 */
+
+        /*
+         * This theme styles the visual editor to resemble the theme style,
+         * specifically font, colors, icons, and column width.
+         */
 		//add_editor_style( array( 'css/editor-style.css', 'genericons/genericons.css', twentyfifteen_fonts_url() ) );
 
 		// Indicate widget sidebars can use selective refresh in the Customizer.
@@ -108,6 +109,40 @@ if ( ! function_exists( 'sfkvs_seventeen_setup' ) ) :
 	}
 endif;
 add_action( 'after_setup_theme', 'sfkvs_seventeen_setup' );
+
+function sfkvs_custom_options_customizer_register($wp_customize)
+{
+    $wp_customize->add_section('social', array(
+        'networks' => __('Networks', 'sfkvs'),
+        'title' => 'Social Media Urls'
+    ));
+
+    // Facebook
+    $wp_customize->add_setting('facebook', array(
+        'url' => ''
+    ));
+    $wp_customize->add_control('facebook', array(
+        'label' => 'Facebook URL',
+        'section' => 'social',
+        'setting' => 'facebook',
+        'type' => 'textfield'
+    ));
+
+    // Twitter
+    $wp_customize->add_setting('twitter', array(
+        'url' => ''
+    ));
+    $wp_customize->add_control('twitter', array(
+        'label' => 'Twitter URL',
+        'section' => 'social',
+        'setting' => 'twitter',
+        'type' => 'textfield'
+    ));
+
+
+}
+
+add_action('customize_register', 'sfkvs_custom_options_customizer_register');
 
 /**
  * Register widget area.
