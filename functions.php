@@ -139,6 +139,27 @@ function sfkvs_custom_options_customizer_register($wp_customize)
         'type' => 'textfield'
     ));
 
+    // Snapchat
+    $wp_customize->add_setting('snapchat', array(
+        'url' => ''
+    ));
+    $wp_customize->add_control('snapchat', array(
+        'label' => 'Snapchat URL',
+        'section' => 'social',
+        'setting' => 'snapchat',
+        'type' => 'textfield'
+    ));
+
+    // Instagram
+    $wp_customize->add_setting('instagram', array(
+        'url' => ''
+    ));
+    $wp_customize->add_control('instagram', array(
+        'label' => 'Instagram URL',
+        'section' => 'social',
+        'setting' => 'instagram',
+        'type' => 'textfield'
+    ));
 
 }
 

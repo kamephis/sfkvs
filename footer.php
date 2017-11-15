@@ -31,11 +31,28 @@
                                 <i class="fa fa-facebook-f"></i>
                             </a>
                         <?php } ?>
+
                         <?php
                         if (get_theme_mod('twitter')) {
                             ?>
                             <a href="<?php echo get_theme_mod('twitter'); ?>">
                                 <i class="fa fa-twitter"></i>
+                            </a>
+                        <?php } ?>
+
+                        <?php
+                        if (get_theme_mod('snapchat')) {
+                            ?>
+                            <a href="<?php echo get_theme_mod('snapchat'); ?>">
+                                <i class="fa fa-snapchat"></i>
+                            </a>
+                        <?php } ?>
+
+                        <?php
+                        if (get_theme_mod('instagram')) {
+                            ?>
+                            <a href="<?php echo get_theme_mod('instagram'); ?>">
+                                <i class="fa fa-instagram"></i>
                             </a>
                         <?php } ?>
                     </div>
