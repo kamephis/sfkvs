@@ -21,14 +21,26 @@
                         <?php dynamic_sidebar('footer_right'); ?>
                     <?php endif; ?>
                 </div>
-                <div class="col item social">
-                    <a href="<?php echo get_theme_mod('facebook'); ?>">
-                        <i class="fa fa-facebook-f"></i>
-                    </a>
-                    <a href="<?php echo get_theme_mod('twitter'); ?>">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                </div>
+
+                <?php if (get_theme_mod('facebook') || get_theme_mod('twitter')) { ?>
+                    <div class="col item social">
+                        <?php
+                        if (get_theme_mod('facebook')) {
+                            ?>
+                            <a href="<?php echo get_theme_mod('facebook'); ?>">
+                                <i class="fa fa-facebook-f"></i>
+                            </a>
+                        <?php } ?>
+                        <?php
+                        if (get_theme_mod('twitter')) {
+                            ?>
+                            <a href="<?php echo get_theme_mod('twitter'); ?>">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        <?php } ?>
+                    </div>
+                <?php } ?>
+
             </div>
             <p class="copyright">
                 <?php echo '&copy; ' . date("Y"); ?>
