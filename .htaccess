@@ -25,3 +25,13 @@ ExpiresByType text/javascript "access plus 14 days"
 ExpiresByType application/x-javascript "access plus 14 days"
 ExpiresByType application/javascript "access plus 14 days"
 </IfModule>
+
+# One year for image files
+<filesMatch ".(jpg|jpeg|png|gif|ico)$">
+Header set Cache-Control "max-age=31536000, public"
+</filesMatch>
+
+# One month for css and js
+<filesMatch ".(css|js)$">
+Header set Cache-Control "max-age=2628000, public"
+</filesMatch>
