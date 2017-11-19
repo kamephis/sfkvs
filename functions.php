@@ -362,24 +362,24 @@ function sfkvs_seventeen_javascript_detection() {
  */
 function sfkvs_seventeen_scripts() {
     // Bootstrap 4 stylesheet
-    wp_register_style('bootstrap.min', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css');
-	wp_enqueue_style( 'bootstrap.min' );
+    //wp_register_style('bootstrap.min', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css');
+    //wp_enqueue_style( 'bootstrap.min' );
 
 	// Font-Awesome stylesheet
-	wp_register_style( 'font-awesome.min', get_template_directory_uri() . '/assets/fonts/font-awesome.min.css' );
-	wp_enqueue_style( 'font-awesome.min' );
+    //wp_register_style( 'font-awesome.min', get_template_directory_uri() . '/assets/fonts/font-awesome.min.css' );
+    //wp_enqueue_style( 'font-awesome.min' );
 
     // Swiper
-    wp_register_style('sfk-swiper', get_template_directory_uri() . '/assets/css/swiper.min.css');
-    wp_enqueue_style('sfk-swiper');
+    //wp_register_style('sfk-swiper', get_template_directory_uri() . '/assets/css/swiper.css');
+    //wp_enqueue_style('sfk-swiper');
 
     // Tether
-    wp_register_style('sfk-tether', get_template_directory_uri() . '/assets/css/tether/tether.css');
-    wp_enqueue_style('sfk-tether');
+    //wp_register_style('sfk-tether', get_template_directory_uri() . '/assets/css/tether/tether.css');
+    //wp_enqueue_style('sfk-tether');
 
 	// myStyle
-    wp_register_style('custom_styles', get_template_directory_uri() . '/assets/css/styles.min.css');
-	wp_enqueue_style( 'custom_styles' );
+    //wp_register_style('custom_styles', get_template_directory_uri() . '/assets/css/styles.min.css');
+    //wp_enqueue_style( 'custom_styles' );
 
     // custom Style
     wp_register_style('sfk_style', get_template_directory_uri() . '/style.css');
@@ -392,8 +392,8 @@ function sfkvs_seventeen_scripts() {
     //wp_register_script('jquery',get_template_directory_uri() .'/assets/js/jquery.min.js','','3.2.1');
     //wp_enqueue_script('jquery');
 
-    wp_register_script('sfk_tether_js', get_template_directory_uri() . '/assets/js/tether/tether.min.js');
-    wp_enqueue_script('sfk_tether_js');
+    //wp_register_script('sfk_tether_js', get_template_directory_uri() . '/assets/js/tether/tether.min.js');
+    //wp_enqueue_script('sfk_tether_js');
 
     wp_register_script('bootstrap.js.min', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array('jquery'));
     wp_enqueue_script('bootstrap.js.min');
