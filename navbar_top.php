@@ -7,7 +7,7 @@
         echo '<a href="' . get_home_url() . '" title="Zurück zur Startseite">';
 
         if (has_custom_logo()) {
-            echo '<img src="' . esc_url($logo[0]) . '" class="img img-fluid" alt="SfK-Logo">';
+            echo '<img src="' . esc_url($logo[0]) . '" class="img img-fluid img-logo" alt="SfK-Logo">';
         } else {
             echo '<h1>' . get_bloginfo('name') . '</h1>';
         }
